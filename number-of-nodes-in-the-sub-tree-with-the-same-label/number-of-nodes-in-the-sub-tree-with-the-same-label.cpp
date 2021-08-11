@@ -1,15 +1,16 @@
 class Solution {
 public:
-    void dfs(int i, string &l, vector<vector<int>>& al, int cnt[], vector<int> &res) {
-        if (res[i] == 0) {
-            res[i] = 1;
-            for (auto j : al[i]) {
-                int cnt1[26] = {};
-                dfs(j, l, al, cnt1, res);
-                for (auto k = 0; k < 26; ++k)
-                    cnt[k] += cnt1[k];
+    void dfs(int i, string& labels, vector<vector<int> >& al, int cnt[], vector<int>& res){
+        if(res[i]==0){
+            res[i]=1;
+            for(auto it: al[i]){
+                int cnt1[26]={};
+                dfs(it, labels, al, cnt1, res);
+                for(char j='a';j<='z';j++){
+                    cnt[j-'a']+=cnt1[j-'a'];
+                }
             }
-            res[i] = ++cnt[l[i] - 'a'];
+            res[i]= ++cnt[labels[i]-'a'];
         }
     }
     vector<int> countSubTrees(int n, vector<vector<int>>& edges, string labels) {
