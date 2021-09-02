@@ -1,5 +1,6 @@
 class Solution {
 public:
+    
     bool canPartition(vector<int>& nums) {
         int n=nums.size();
         int total=accumulate(nums.begin(), nums.end(),0);
