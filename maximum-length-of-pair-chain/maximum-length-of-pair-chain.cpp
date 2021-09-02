@@ -1,21 +1,23 @@
-bool cmp(vector<int>& a, vector<int>& b){
-    return a[1]<b[1];
-}
-
 class Solution {
 public:
-    int findLongestChain(vector<vector<int>>& pairs) {
-        int n=pairs.size();
-        sort(pairs.begin(), pairs.end(), cmp);
-        int count=1; int j=0;
-        // for(auto it: pairs){
-        //     cout<<it[0]<<' '<<it[1]<<"\n";
-        // }
-        for(int i=1;i<n;i++){
-            if(pairs[j][1]<pairs[i][0]){
-                count++; j=i;
-            }
+    int dp[1002];
+    int n;
+    
+    int solve(int i, vector<vector<int>>& pairs){
+        if(i>=n) return 0;
+        int j=0;
+        if(dp[i]!=-1) return dp[i];
+        
+        for(j=i+1;j<n;j++){
+            if(pairs[i][1]<pairs[j][0]) break;
         }
-        return count;
+        
+        return dp[i] = max(solve(i+1, pairs), 1+solve(j, pairs));
+    }
+    int findLongestChain(vector<vector<int>>& pairs) {
+        sort(pairs.begin(), pairs.end());
+        n=pairs.size();
+        memset(dp,-1,sizeof dp);
+        return solve(0, pairs);
     }
 };
