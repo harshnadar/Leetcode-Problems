@@ -1,17 +1,21 @@
 class Solution {
 public:
-    int findTargetSumWays(vector<int>& nums, int S) {
-        int sum = 0;
-        for (auto n : nums) sum += n;
-        if ((sum + S) % 2 == 1 || S > sum || S < -sum) return 0;
-        int newS = (sum + S) / 2;
-        vector<int> dp(newS + 1, 0);
-        dp[0] = 1;
-        for (int i = 0; i < nums.size(); ++i) {
-            for (int j = newS; j >= nums[i]; --j) {
-                dp[j] += dp[j - nums[i]];
+    int findTargetSumWays(vector<int>& nums, int target) {
+        int sum=accumulate(nums.begin(), nums.end(),0);
+        if((sum+target)%2 || target>sum || target<-sum) return 0;
+        int s = (target+sum)/2;
+        int n=nums.size();
+        int dp[s+1];
+        memset(dp,0,sizeof dp);
+        dp[0]=1;
+        for(int i=0;i<n;i++){
+            // dp[nums[i]]++;
+            for(int j=s;j>=nums[i];j--){
+                if(j-nums[i] >=0){
+                    dp[j]+= dp[j-nums[i]];
+                }
             }
         }
-        return dp[newS];
+        return dp[s];
     }
 };
