@@ -1,3 +1,4 @@
+[Discussion Post (created on 8/8/2021 at 8:56)](https://leetcode.com/problems/create-sorted-array-through-instructions/discuss/1451322/C%2B%2B-or-Segment-tree-Solution-Explained)  
 <h2>1649. Create Sorted Array through Instructions</h2><h3>Hard</h3><hr><div><p>Given an integer array <code>instructions</code>, you are asked to create a sorted array from the elements in <code>instructions</code>. You start with an empty container <code>nums</code>. For each element from <strong>left to right</strong> in <code>instructions</code>, insert it into <code>nums</code>. The <strong>cost</strong> of each insertion is the <b>minimum</b> of the following:</p>
 
 <ul>
