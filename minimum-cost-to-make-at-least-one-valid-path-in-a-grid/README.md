@@ -1,3 +1,4 @@
+[Discussion Post (created on 9/8/2021 at 10:39)](https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/discuss/1453329/Dijkstra-or-C%2B%2B)  
 <h2>1368. Minimum Cost to Make at Least One Valid Path in a Grid</h2><h3>Hard</h3><hr><div>Given a <em>m</em> x <em>n</em> <code>grid</code>. Each cell of the <code>grid</code> has a sign pointing to the next cell you should visit if you are currently in this cell. The sign of <code>grid[i][j]</code> can be:
 <ul>
 	<li><strong>1</strong> which means go to the cell to the right. (i.e go from <code>grid[i][j]</code> to <code>grid[i][j + 1]</code>)</li>
