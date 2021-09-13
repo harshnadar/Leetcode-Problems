@@ -1,3 +1,4 @@
+[Discussion Post (created on 13/8/2021 at 22:1)](https://leetcode.com/problems/minimum-falling-path-sum/discuss/1461642/C%2B%2B-or-DP-or-Easy-to-Understand)  
 <h2>931. Minimum Falling Path Sum</h2><h3>Medium</h3><hr><div><p>Given an <code>n x n</code> array of integers <code>matrix</code>, return <em>the <strong>minimum sum</strong> of any <strong>falling path</strong> through</em> <code>matrix</code>.</p>
 
 <p>A <strong>falling path</strong> starts at any element in the first row and chooses the element in the next row that is either directly below or diagonally left/right. Specifically, the next element from position <code>(row, col)</code> will be <code>(row + 1, col - 1)</code>, <code>(row + 1, col)</code>, or <code>(row + 1, col + 1)</code>.</p>
