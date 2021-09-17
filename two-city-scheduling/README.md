@@ -1,3 +1,4 @@
+[Discussion Post (created on 17/8/2021 at 11:44)](https://leetcode.com/problems/two-city-scheduling/discuss/1468186/C%2B%2B-or-Only-2-steps)  
 <h2>1029. Two City Scheduling</h2><h3>Medium</h3><hr><div><p>A company is planning to interview <code>2n</code> people. Given the array <code>costs</code> where <code>costs[i] = [aCost<sub>i</sub>, bCost<sub>i</sub>]</code>,&nbsp;the cost of flying the <code>i<sup>th</sup></code> person to city <code>a</code> is <code>aCost<sub>i</sub></code>, and the cost of flying the <code>i<sup>th</sup></code> person to city <code>b</code> is <code>bCost<sub>i</sub></code>.</p>
 
 <p>Return <em>the minimum cost to fly every person to a city</em> such that exactly <code>n</code> people arrive in each city.</p>
