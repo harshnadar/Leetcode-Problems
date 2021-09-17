@@ -1,3 +1,4 @@
+[Discussion Post (created on 17/8/2021 at 11:5)](https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/discuss/1468133/C%2B%2B-or-Segment-Tree-and-top-down-DP)  
 <h2>1335. Minimum Difficulty of a Job Schedule</h2><h3>Hard</h3><hr><div><p>You want to schedule a list of jobs in <code>d</code> days. Jobs are dependent (i.e To work on the <code>i-th</code> job, you have to finish all the jobs <code>j</code> where <code>0 &lt;= j &lt; i</code>).</p>
 
 <p>You have to finish <strong>at least</strong> one task every day. The difficulty of a job schedule is the sum of difficulties of each day of the <code>d</code> days. The difficulty of a day is the maximum difficulty of a job done in that day.</p>
