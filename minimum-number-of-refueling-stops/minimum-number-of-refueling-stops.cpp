@@ -16,6 +16,5 @@ public:
             if(dp[i]>=target) return i;
         }
         return -1;
-        
     }
 };
