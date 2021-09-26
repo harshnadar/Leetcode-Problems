@@ -1,3 +1,4 @@
+[Discussion Post (created on 26/8/2021 at 20:51)](https://leetcode.com/problems/find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows/discuss/1487458/C%2B%2B-or-K-smallest-sums)  
 <h2>1439. Find the Kth Smallest Sum of a Matrix With Sorted Rows</h2><h3>Hard</h3><hr><div><p>You are given an&nbsp;<code>m&nbsp;* n</code>&nbsp;matrix,&nbsp;<code>mat</code>, and an integer <code>k</code>,&nbsp;which&nbsp;has its rows sorted in non-decreasing&nbsp;order.</p>
 
 <p>You are allowed to choose exactly 1 element from each row to form an array.&nbsp;Return the Kth <strong>smallest</strong> array sum among all possible arrays.</p>
