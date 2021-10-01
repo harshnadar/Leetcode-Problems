@@ -1,3 +1,4 @@
+[Discussion Post (created on 1/9/2021 at 15:45)](https://leetcode.com/problems/unique-paths-iii/discuss/1496997/C%2B%2B-or-Backtracking-solution-or-100-fast)  
 <h2>980. Unique Paths III</h2><h3>Hard</h3><hr><div><p>You are given an <code>m x n</code> integer array <code>grid</code> where <code>grid[i][j]</code> could be:</p>
 
 <ul>
