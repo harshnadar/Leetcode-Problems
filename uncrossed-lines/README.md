@@ -1,3 +1,4 @@
+[Discussion Post (created on 3/9/2021 at 11:14)](https://leetcode.com/problems/uncrossed-lines/discuss/1500379/C%2B%2B-or-Simple-Top-Down-DP-Explained)  
 <h2>1035. Uncrossed Lines</h2><h3>Medium</h3><hr><div><p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>. We write the integers of <code>nums1</code> and <code>nums2</code> (in the order they are given) on two separate horizontal lines.</p>
 
 <p>We may draw connecting lines: a straight line connecting two numbers <code>nums1[i]</code> and <code>nums2[j]</code> such that:</p>
