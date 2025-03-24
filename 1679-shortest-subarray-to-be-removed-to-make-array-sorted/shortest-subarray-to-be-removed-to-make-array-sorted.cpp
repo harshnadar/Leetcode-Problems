@@ -1,5 +1,6 @@
 class Solution {
 public:
+    int count = 0;
     vector<bool> pre_check;
     vector<bool> suf_check;
 
@@ -14,11 +15,13 @@ public:
             if(nums[i] >= pre && !pre_flag){
                 pre_check[i] = true;
                 pre = nums[i];
+                count++;
             }
             else pre_flag = true;
             if(nums[n-i-1] <= suf && !suf_flag){
                 suf_check[n-i-1]=true;
                 suf = nums[n-i-1];
+                count++;
             }
             else suf_flag = true;
             if(pre_flag && suf_flag) break;
@@ -38,7 +41,8 @@ public:
     int findLengthOfShortestSubarray(vector<int>& nums) {
         int n = nums.size();
         precompute(nums);
-        int lo = 1, hi = n;
+        
+        int lo = 1, hi = min(count,n);
         int k = 0;
         while(lo<=hi){
             int mid = lo+(hi-lo)/2;
