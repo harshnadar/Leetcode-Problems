@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int count = 0;
+    int pre_count = 0, suf_count=0;
     vector<bool> pre_check;
     vector<bool> suf_check;
 
@@ -15,13 +15,13 @@ public:
             if(nums[i] >= pre && !pre_flag){
                 pre_check[i] = true;
                 pre = nums[i];
-                count++;
+                pre_count++;
             }
             else pre_flag = true;
             if(nums[n-i-1] <= suf && !suf_flag){
                 suf_check[n-i-1]=true;
                 suf = nums[n-i-1];
-                count++;
+                suf_count++;
             }
             else suf_flag = true;
             if(pre_flag && suf_flag) break;
@@ -42,7 +42,7 @@ public:
         int n = nums.size();
         precompute(nums);
         
-        int lo = 1, hi = min(count,n);
+        int lo = max(pre_count, suf_count), hi = min(pre_count+suf_count,n);
         int k = 0;
         while(lo<=hi){
             int mid = lo+(hi-lo)/2;
