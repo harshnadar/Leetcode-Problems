@@ -1,29 +1,31 @@
 class Solution {
 public:
-    bool satisfy(int groups, vector<int> &usageLimits) {
+
+    bool check(vector<int> usage, int k){
+        int n = usage.size();
+        int h = k;
         int gap = 0;
-        int h = groups;
-        for (int i = 0; i < usageLimits.size(); ++i) {
-            gap = max(h - usageLimits[i] + gap, 0);
-            if (h) h -= 1;
+        for(int i=0;i<n;i++){
+            gap = max(h-usage[i] + gap, 0);
+            if(h) h-=1;
         }
-        return gap == 0;
+        return gap==0;
     }
-    int maxIncreasingGroups(vector<int>& usageLimits) {
-        int n = usageLimits.size();
-        sort(usageLimits.begin(), usageLimits.end(), greater<int>());
-        int l = 1, r = n;
-        int res = 1;
-        while (l <= r) {
-            int mid = l + (r - l) / 2;
-            if (satisfy(mid, usageLimits)) {
-                res = max(res, mid);
-                l = mid + 1;
-            } else {
-                r = mid - 1;
-            }
+    int maxIncreasingGroups(vector<int>& usage) {
+        sort(usage.begin(), usage.end(), greater<int>());
+        int n = usage.size();
+        int lo = 1, hi = n;
+        int ans = 1;
+        int a = check(usage, 12);
+        // cout<<endl<<a;
+        while(lo<=hi){
+            int mid = lo+(hi-lo)/2;
+            cout<<mid<<endl;
+            
+            if(check(usage, mid)) {lo = mid+1; ans = mid;}
+            else hi = mid-1;
+            cout<<endl;
         }
-        return res;
-        
+        return ans;
     }
 };
