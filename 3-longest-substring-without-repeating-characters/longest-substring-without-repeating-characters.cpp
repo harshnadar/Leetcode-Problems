@@ -7,7 +7,6 @@ public:
         map<char, int> mp;
         while(j<n && i<n && i<=j){
             mp[s[j]]++;
-            cout<<s[j]<<" "<<j<<" "<<i<<" "<<mp[s[j]]<<endl;
             if(mp[s[j]]>1){
                 while(mp[s[j]]>1){
                     mp[s[i]]--;
