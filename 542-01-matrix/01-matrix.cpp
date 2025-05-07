@@ -5,35 +5,38 @@ public:
         int dy[] = {0,1,0,-1};
         int n = mat.size();
         int m = mat[0].size();
-        vector<vector<int>> ans(n, vector<int>(m,0));
 
-        queue<vector<int>> q;
-
+        queue<vector<int> > q;
+        vector<vector<int> >dist(n, vector<int>(m,1e9));
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                if(mat[i][j]==0) q.push({i,j,0});
+                if(mat[i][j] == 0) {
+                    q.push({i,j, 0});
+                    dist[i][j] = 0;
+                }
             }
         }
 
-        int timer = 0;
         while(!q.empty()){
-            vector<int> curr_node = q.front();
+            int curr_x = q.front()[1];
+            int curr_y = q.front()[0];
+            int curr_d = q.front()[2];
             q.pop();
+            // if(dist[curr_x][curr_y] >= curr_d) continue;
 
-            for(int i=0;i<4;i++){
-                int x = curr_node[0] + dx[i];
-                int y = curr_node[1] + dy[i];
+            for(int i = 0;i<4;i++){
+                int new_x = dx[i] + curr_x;
+                int new_y = dy[i] + curr_y;
 
-                if(x<0 || y<0 || x>=n || y>=m) continue;
-                if(mat[x][y] == 0) continue;
+                if(new_x <0 || new_x >=m || new_y <0 || new_y>=n) continue;
 
-                ans[x][y] = curr_node[2] + 1;
-                mat[x][y] = 0;
-                q.push({x,y,ans[x][y]});
+                if(dist[new_y][new_x] > curr_d+1){
+                    dist[new_y][new_x] = curr_d+1;
+                    q.push({new_y, new_x, dist[new_y][new_x]});
+                }
             }
         }
-
-        return ans;
+        return dist;
 
     }
 };
