@@ -9,14 +9,21 @@ public:
 
         bool a = false;
         if(p[j] == '*'){
-            a = a || solve(s, p, i+1, j) || solve(s, p, i+1, j+1) || solve(s, p, i, j+1);
+            a = a || solve(s, p, i+1, j);
+            if(a) return a;
+            a = a || solve(s, p, i+1, j+1);
+            if(a) return a;
+            a = a || solve(s, p, i, j+1); 
+            if(a) return a;
         }
         else if(p[j] == '?'){
             a = a || solve(s, p, i+1, j+1);
+            if(a) return a;
         }
         else{
             if(s[i] == p[j]){
                 a = a || solve(s, p, i+1, j+1);
+                if(a) return a;
             }
             else{
                 return false;
