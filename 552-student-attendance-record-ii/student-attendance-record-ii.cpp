@@ -20,7 +20,7 @@ public:
         c = solve(i+1, abs_count, 0);
         c%=MOD;
 
-        return dp[i][abs_count][consec_late_count] = (((long long)a+b)%MOD + c)%MOD;
+        return dp[i][abs_count][consec_late_count] = ((a+b)%MOD + c)%MOD;
     }
 
     int checkRecord(int n) {
