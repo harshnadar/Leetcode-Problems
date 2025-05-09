@@ -5,15 +5,16 @@ public:
     int n,m;
     int val;
 
-    int solve(vector<vector<int> >& grid, vector<vector<bool>>& vis, int i, int j){
+    int solve(vector<vector<int> >& grid, int i, int j){
         
-        if(i<0 || j<0 || i>=n || j>=m || vis[i][j] || grid[i][j] == 0) return 0;
-        vis[i][j] = true;
+        if(i<0 || j<0 || i>=n || j>=m || grid[i][j] == 0) return 0;
+        int orig = grid[i][j];
+        grid[i][j] = 0;
         int a = 0;
         for(int k=0;k<4;k++){
-            a= max(a, grid[i][j] + solve(grid, vis, i+dx[k], j+dy[k]));
+            a= max(a, orig + solve(grid, i+dx[k], j+dy[k]));
         }
-        vis[i][j]=false;
+        grid[i][j]=orig;
         return a;
     }
     int getMaximumGold(vector<vector<int>>& grid) {
@@ -24,8 +25,7 @@ public:
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(grid[i][j] == 0) continue;
-                vector<vector<bool> > vis(n, vector<bool>(m, false));
-                ans = max(ans, solve(grid, vis, i, j));
+                ans = max(ans, solve(grid, i, j));
             }
         }
         return ans;
