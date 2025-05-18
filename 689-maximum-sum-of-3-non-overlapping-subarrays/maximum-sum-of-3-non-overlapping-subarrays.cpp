@@ -31,11 +31,6 @@ public:
     vector<int> maxSumOfThreeSubarrays(vector<int>& nums, int k) {
         int n = nums.size();
         vector<int> pref = prefill_pref(nums, k);
-        for(auto it: pref) cout<<it<<" ";
-        cout<<endl;
-        for(auto it: pref_max) cout<<it<<" ";
-        cout<<endl;
-        for(auto it: suf_max) cout<<it<<" ";
         vector<int> ans;
         int curr_max = -1;
 
