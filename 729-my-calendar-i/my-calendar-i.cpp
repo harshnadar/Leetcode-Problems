@@ -1,17 +1,22 @@
 class MyCalendar {
-    set<pair<int, int> > booked;
+    map<int, int> mp;;
 public:
     MyCalendar() {
         
     }
     
-    bool book(int startTime, int endTime) {
-        auto next = booked.lower_bound({startTime, endTime});
-        if(next!=booked.end() && next->first < endTime){
-            return false;
+    bool book(int s, int e) {
+        mp[s]++;
+        mp[e]--;
+        int count = 0;
+        for(auto it: mp){
+            count+=it.second;
+            if(count>1) {
+                mp[s]--;
+                mp[e]++;
+                return false;
+            }
         }
-        if(next!=booked.begin() && startTime < (--next)->second) return false;
-        booked.insert({startTime, endTime});
         return true;
     }
 };
