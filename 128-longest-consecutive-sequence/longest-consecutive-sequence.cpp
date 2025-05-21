@@ -6,11 +6,11 @@ public:
         int longest_streak_count = 0;
 
         for(auto& it: st){
-            if(st.find(it-1)==st.end()){
+            if(!st.count(it-1)){
                 int curr_num = it;
                 int curr_streak = 1;
 
-                while(st.find(curr_num+1)!=st.end()){
+                while(st.count(curr_num+1)){
                     curr_num++;
                     curr_streak++;
                 }
