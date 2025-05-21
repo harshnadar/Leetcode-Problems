@@ -1,15 +1,16 @@
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        unordered_set<int> numSet(nums.begin(), nums.end());
+        unordered_set<int> st(nums.begin(), nums.end());
+        int n = nums.size();
         int longest_streak_count = 0;
-        
-        for(int num : numSet) {  // Iterate through unique numbers only
-            if(numSet.find(num - 1) == numSet.end()) {  // Check if it's start of sequence
-                int curr_num = num;
+
+        for(auto& it: st){
+            if(st.find(it-1)==st.end()){
+                int curr_num = it;
                 int curr_streak = 1;
-                
-                while(numSet.find(curr_num + 1) != numSet.end()) {
+
+                while(st.find(curr_num+1)!=st.end()){
                     curr_num++;
                     curr_streak++;
                 }
